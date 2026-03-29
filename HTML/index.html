@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio de Serigne Mansour Gaye — Étudiant en Géomatique & Développeur Web Junior.">
+  <meta property="og:title" content="Portfolio — Serigne Mansour Gaye">
+  <meta property="og:description" content="Étudiant en L2 Géomatique · Développeur Web Junior · HTML · CSS · JavaScript">
+  <meta property="og:type" content="website">
+  <title>Serigne Mansour Gaye — Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Styles CSS -->
+  <link rel="stylesheet" href="../CSS/style.css">
+  <link rel="stylesheet" href="../CSS/animations.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar" id="navbar">
+      <a href="#accueil" class="nav-logo">S.M.G</a>
+      
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+      
+      <ul class="nav-links" id="navMenu">
+        <li><a href="#accueil" class="nav-link nav-link--active">Accueil</a></li>
+        <li><a href="#competences" class="nav-link">Compétences</a></li>
+        <li><a href="#projets" class="nav-link">Projets</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      
+      <!-- Bouton mode clair/sombre intégré dans la navbar -->
+      <button class="theme-toggle-nav" id="themeToggleNav" aria-label="Changer de mode">
+        <i class="fas fa-moon" id="themeIconNav"></i>
+        <span class="theme-text">Mode</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- SECTION ACCUEIL -->
+    <section id="accueil" class="section section--hero">
+      <div class="container">
+        <div class="hero">
+          <div class="hero__text">
+            <p class="hero__eyebrow">Étudiant en Géomatique &amp; Développeur Web</p>
+            <h1 class="hero__name">Serigne Mansour<br><em>GAYE</em></h1>
+            <p class="hero__title">// L2 Géomatique · Développeur Web Junior</p>
+            <div class="hero__bio" id="heroBio">
+              Étudiant en Licence 2 Géomatique et passionné par le développement web et les
+              technologies de l'information géographique. J'aime créer des applications et des
+              sites web qui permettent de valoriser les données et de résoudre des problèmes concrets.
+            </div>
+            <div class="hero__socials">
+              <a href="https://github.com/Mansour-gaye-05/" target="_blank" rel="noopener noreferrer" class="hero__social-link" aria-label="GitHub">
+                <i class="fab fa-github"></i><span>GitHub</span>
+              </a>
+              <a href="https://www.linkedin.com/in/serigne-mansour-gaye-20a459375/" target="_blank" rel="noopener noreferrer" class="hero__social-link" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i><span>LinkedIn</span>
+              </a>
+            </div>
+            <br>
+            <div class="hero__actions">
+              <a href="#projets" class="btn btn--primary">Voir mes projets</a>
+              <a href="#contact" class="btn btn--ghost">Me contacter</a>
+              <a href="../CV_SMG.pdf" class="btn btn--cv" download>
+                <i class="fas fa-file-arrow-down"></i> CV
+              </a>
+            </div>
+          </div>
+          <div class="hero__visual">
+            <div class="avatar-frame">
+              <div class="avatar-ring">
+                <div class="avatar-circle">
+                  <img src="../Image/Profil.jpg" alt="Portrait de Serigne Mansour Gaye">
+                </div>
+              </div>
+              <span class="avatar-frame__label">// Serigne Mansour GAYE · 2026</span>
+              <span class="avatar-location">
+                <i class="fas fa-map-marker-alt"></i> Diourbel, Sénégal
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION COMPÉTENCES -->
+    <section id="competences" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-header__number">01</span>
+          <h2 class="section-header__title">Compé<em>tences</em></h2>
+          <div class="section-header__line"></div>
+        </div>
+        
+        <!-- Langages de programmation -->
+        <div class="skills-category reveal">
+          <div class="skills-category-header">
+            <i class="fas fa-code"></i>
+            <h3 class="skills-category-title">Langages de programmation</h3>
+            <div class="skills-category-line"></div>
+          </div>
+          <div class="skills-grid">
+            <div class="skill-bar-item">
+              <div class="skill-bar-item__header">
+                <span class="skill-bar-item__name">HTML</span>
+                <span class="skill-bar-item__pct">90%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" style="width:90%;"></div>
+              </div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-item__header">
+                <span class="skill-bar-item__name">CSS</span>
+                <span class="skill-bar-item__pct">85%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" style="width:85%;"></div>
+              </div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-item__header">
+                <span class="skill-bar-item__name">JavaScript</span>
+                <span class="skill-bar-item__pct">75%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" style="width:75%;"></div>
+              </div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-item__header">
+                <span class="skill-bar-item__name">Python</span>
+                <span class="skill-bar-item__pct">65%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" style="width:65%;"></div>
+              </div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-item__header">
+                <span class="skill-bar-item__name">POO</span>
+                <span class="skill-bar-item__pct">55%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" style="width:55%;"></div>
+              </div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-item__header">
+                <span class="skill-bar-item__name">SQL</span>
+                <span class="skill-bar-item__pct">60%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" style="width:60%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Logiciels & Outils -->
+        <div class="skills-category reveal">
+          <div class="skills-category-header">
+            <i class="fas fa-tools"></i>
+            <h3 class="skills-category-title">Logiciels & Outils</h3>
+            <div class="skills-category-line"></div>
+          </div>
+          <div class="skills-grid">
+            <div class="skill-bar-item">
+              <div class="skill-bar-item__header">
+                <span class="skill-bar-item__name">QGIS</span>
+                <span class="skill-bar-item__pct">88%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" style="width:88%;"></div>
+              </div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-item__header">
+                <span class="skill-bar-item__name">ArcGIS</span>
+                <span class="skill-bar-item__pct">70%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" style="width:70%;"></div>
+              </div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-item__header">
+                <span class="skill-bar-item__name">R / RStudio</span>
+                <span class="skill-bar-item__pct">78%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" style="width:78%;"></div>
+              </div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-item__header">
+                <span class="skill-bar-item__name">AutoCAD</span>
+                <span class="skill-bar-item__pct">75%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" style="width:75%;"></div>
+              </div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-item__header">
+                <span class="skill-bar-item__name">KoboToolbox</span>
+                <span class="skill-bar-item__pct">70%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" style="width:70%;"></div>
+              </div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-item__header">
+                <span class="skill-bar-item__name">VS Code</span>
+                <span class="skill-bar-item__pct">85%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" style="width:85%;"></div>
+              </div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-item__header">
+                <span class="skill-bar-item__name">Pycharm</span>
+                <span class="skill-bar-item__pct">65%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" style="width:65%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="skills-description reveal">
+          <p><i class="fas fa-code"></i> À la croisée du développement web et de la géomatique, je conçois 
+            des solutions modernes, performantes et centrées sur la valorisation des données spatiales.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION PROJETS -->
+    <section id="projets" class="section section--dark">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-header__number">02</span>
+          <h2 class="section-header__title">Mes <em>Projets</em></h2>
+          <div class="section-header__line"></div>
+        </div>
+    
+        <!-- ========== FILTRE DES PROJETS ========== -->
+        <div class="projects-filter reveal">
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">Tous</button>
+            <button class="filter-btn" data-filter="2025">2025</button>
+            <button class="filter-btn" data-filter="2026">2026</button>
+            <button class="filter-btn" data-filter="encours">En cours</button>
+          </div>
+        </div>   
+        <div class="projects-grid" id="projectsContainer">
+          <!-- Projets existants avec data-year -->
+        </div>
+        <div class="projects-grid" id="projectsContainer">
+  
+          <!-- Projet 1 - 2025 -->
+          <article class="project-card reveal" data-year="2025">
+            <div class="project-card__icon-wrap"><i class="fas fa-map"></i></div>
+            <div class="project-card__meta">
+              <span><i class="fas fa-map"></i>
+                Géomatique</span>
+              <span class="project-card__year">2025</span>
+            </div>
+            <h3 class="project-card__name">Cartographie Thématique</h3>
+            <p class="project-card__desc">Création de cartes thématiques spécialisées.</p>
+            <ul class="project-card__tags">
+              <li class="tag">QGIS</li>
+              <li class="tag">ArcGIS</li>
+            </ul>
+            <div class="project-card__actions">
+              <a href="#" target="_blank" class="project-card__link"><i class="fas fa-eye"></i> Voir le projet</a>
+              <a href="#" download class="project-card__download"><i class="fas fa-download"></i> Télécharger</a>
+            </div>
+          </article>
+
+          <!-- Projet 2 - 2025 -->
+          <article class="project-card reveal" data-year="2025">
+            <div class="project-card__icon-wrap"><i class="fas fa-home"></i></div>
+            <div class="project-card__meta">
+              <span><i class="fas fa-home"></i>
+                Architecture</span>
+              <span class="project-card__year">2025</span>
+            </div>
+            <h3 class="project-card__name">Plan de Maison</h3>
+            <p class="project-card__desc">Conception d'un plan architectural complet.</p>
+            <ul class="project-card__tags">
+              <li class="tag">AutoCAD</li>
+              <li class="tag">Dessin Technique</li>
+            </ul>
+            <div class="project-card__actions">
+              <a href="../Projet plan maison.pdf" target="_blank" class="project-card__link"><i class="fas fa-eye"></i> Voir le projet</a>
+              <a href="../Projet plan maison.pdf" download class="project-card__download"><i class="fas fa-download"></i> Télécharger</a>
+            </div>
+          </article>
+
+          <!-- Projet 3 - 2026 -->
+          <article class="project-card reveal" data-year="2026">
+            <div class="project-card__icon-wrap"><i class="fas fa-chart-bar"></i></div>
+            <div class="project-card__meta">
+              <span><i class="fas fa-chart-bar"></i>
+                Géomatique</span>
+              <span class="project-card__year">2026</span>
+            </div>
+            <h3 class="project-card__name">Analyse des Données</h3>
+            <p class="project-card__desc">Traitement et visualisation de données géospatiales pour identifier des tendances territoriales.</p>
+            <ul class="project-card__tags">
+              <li class="tag">RStudio</li>
+              <li class="tag">R Markdown</li>
+            </ul>
+            <div class="project-card__actions">
+              <a href="../Projet Analyse 3.pdf" target="_blank" class="project-card__link"><i class="fas fa-eye"></i> Voir le projet</a>
+              <a href="../Projet Analyse 3.pdf" download class="project-card__download"><i class="fas fa-download"></i> Télécharger</a>
+            </div>
+          </article>
+
+          <!-- Projet 4 - 2026 -->
+          <article class="project-card reveal" data-year="2026">
+            <div class="project-card__icon-wrap"><i class="fas fa-clipboard-list"></i></div>
+            <div class="project-card__meta">
+              <span><i class="fas fa-clipboard-list"></i>
+                Terrain</span>
+              <span class="project-card__year">2026</span>
+            </div>
+            <h3 class="project-card__name">Méthode de Collecte</h3>
+            <p class="project-card__desc">Conception d'une méthodologie de collecte de données sur le terrain.</p>
+            <ul class="project-card__tags">
+              <li class="tag">KoboToolbox</li>
+              <li class="tag">QGIS</li>
+            </ul>
+            <div class="project-card__actions">
+              <a href="../PROJET_Ndoncky 2026.pdf" target="_blank" class="project-card__link"><i class="fas fa-eye"></i> Voir le projet</a>
+              <a href="../PROJET_Ndoncky 2026.pdf" download class="project-card__download"><i class="fas fa-download"></i> Télécharger</a>
+            </div>
+          </article>
+
+          <!-- Projet 5 - 2026 -->
+          <article class="project-card reveal" data-year="2026">
+            <div class="project-card__icon-wrap"><i class="fas fa-code"></i></div>
+            <div class="project-card__meta">
+              <span><i class="fas fa-code"></i>
+                Web</span>
+              <span class="project-card__year">2026</span>
+            </div>
+            <h3 class="project-card__name">Développement Web</h3>
+            <p class="project-card__desc">Création de sites web modernes et responsifs.</p>
+            <ul class="project-card__tags">
+              <li class="tag">HTML</li>
+              <li class="tag">CSS</li>
+              <li class="tag">JavaScript</li>
+            </ul>
+            <div class="project-card__actions">
+              <a href="#" target="_blank" class="project-card__link"><i class="fas fa-eye"></i> Voir le projet</a>
+              <a href="#" download class="project-card__download"><i class="fas fa-download"></i> Télécharger</a>
+            </div>
+          </article>
+
+          <!-- Projet 6 - Gestion de matérielles (En cours) -->
+          <article class="project-card reveal" data-year="encours">
+            <div class="project-card__icon-wrap">
+              <i class="fas fa-laptop"></i>
+            </div>
+            <div class="project-card__meta">
+              <span><i class="fas fa-laptop" style="margin-right:0.4rem;"></i>
+                Gestion</span>
+              <span class="project-card__year">En cours</span>
+            </div>
+            <h3 class="project-card__name">Gestion de Matériels</h3>
+            <p class="project-card__desc">
+              Application de gestion des matériels permettant de suivre, 
+              organiser et contrôler l'utilisation des équipements.
+            </p>
+            <ul class="project-card__tags">
+              <li class="tag">Pycharm</li>
+              <li class="tag">MySQL</li>
+            </ul>
+            <div class="project-card__actions">
+              <a href="#" target="_blank" class="project-card__link">
+                <i class="fas fa-eye"></i> Voir le projet
+              </a>
+              <a href="#" download class="project-card__download">
+                <i class="fas fa-download"></i> Télécharger
+              </a>
+            </div>
+          </article>
+        </div>
+    </section>
+
+    <!-- SECTION CONTACT -->
+    <section id="contact" class="section section--dark">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-header__number">03</span>
+          <h2 class="section-header__title">Con<em>tact</em></h2>
+          <div class="section-header__line"></div>
+        </div>
+        <div class="contact-layout">
+          <div class="contact-info reveal">
+            <h3 class="contact-info__heading">Travaillons <em>ensemble</em></h3>
+            <p class="contact-info__text">Je suis à votre disposition pour toute opportunité professionnelle ou collaboration.</p>
+            <ul class="contact-socials">
+              <li><a href="https://www.linkedin.com/in/serigne-mansour-gaye-20a459375/" class="social-link">LinkedIn</a></li>
+              <li><a href="https://github.com/Mansour-gaye-05/" class="social-link">GitHub</a></li>
+            </ul>
+          </div>
+          <form class="contact-form reveal" id="contactForm" novalidate>
+            <div class="form-field">
+              <input type="text" id="name" placeholder=" " required>
+              <label for="name">Nom</label>
+            </div>
+            <div class="form-field">
+              <input type="email" id="email" placeholder=" " required>
+              <label for="email">Email</label>
+            </div>
+            <div class="form-field">
+              <textarea id="message" placeholder=" " rows="5" required></textarea>
+              <label for="message">Message</label>
+            </div>
+            <button type="submit" class="btn--outline">Envoyer</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="thankyou-overlay" id="thankyouOverlay" role="dialog" aria-hidden="true">
+        <div class="thankyou-box">
+          <div class="thankyou-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <p class="thankyou-eyebrow">Message reçu</p>
+          <h2 class="thankyou-title">Merci de m'avoir<br><em>contacté !</em></h2>
+          <div class="thankyou-divider"></div>
+          <p class="thankyou-text">Je reviendrai vers vous sous 48h.</p>
+          <button class="btn--outline" id="thankyouClose">Retour</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 <em>Serigne Mansour Gaye</em></p>
+    <p><span>Géomatique · Développement Web</span> · <span><i class="fas fa-map-marker-alt"></i> Diourbel, Sénégal</span></p>
+  </footer>
+
+  <script src="../JS/app.js"></script>
+</body>
+</html>
