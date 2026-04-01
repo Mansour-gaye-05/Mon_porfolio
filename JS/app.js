@@ -87,89 +87,55 @@
     });
   }
 
-  // ========== EFFET DE LUMIÈRE SUR LA NAVBAR ==========
-if (navbar) {
-  // Fonction pour obtenir la couleur de fond correcte selon le mode
-  function getNavbarBaseColor() {
-    if (document.body.classList.contains('light-mode')) {
-      return 'rgba(255, 255, 255, 0.85)';
-    } else {
-      return 'rgba(10, 10, 20, 0.75)';
-    }
-  }
-  
-  // Fonction pour obtenir la couleur de fond au survol
-  function getNavbarHoverColor(x, y) {
-    if (document.body.classList.contains('light-mode')) {
-      return `radial-gradient(circle at ${x}px ${y}px, rgba(212, 175, 55, 0.2), rgba(255, 255, 255, 0.85))`;
-    } else {
-      return `radial-gradient(circle at ${x}px ${y}px, rgba(212, 175, 55, 0.2), rgba(10, 10, 20, 0.85))`;
-    }
-  }
-  
-  // Sauvegarder la couleur de base actuelle
-  let currentBaseColor = getNavbarBaseColor();
-  
-  // Appliquer la couleur de base
-  navbar.style.background = currentBaseColor;
-  
-  // Effet au survol
-  navbar.addEventListener('mousemove', (e) => {
-    const rect = navbar.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    navbar.style.background = getNavbarHoverColor(x, y);
-  });
-  
-  navbar.addEventListener('mouseleave', () => {
-    // Remettre la couleur de base actuelle
-    navbar.style.background = currentBaseColor;
-  });
-  
-  // Observer les changements de mode clair/sombre
-  const observer = new MutationObserver(() => {
-    currentBaseColor = getNavbarBaseColor();
-    // Si la souris n'est pas sur la navbar, mettre à jour la couleur
-    if (!navbar.matches(':hover')) {
-      navbar.style.background = currentBaseColor;
-    }
-  });
-  
-  observer.observe(document.body, {
-    attributes: true,
-    attributeFilter: ['class']
-  });
-}
-
   // ========== MODE CLAIR/SOMBRE AVEC BOUTON DANS NAVBAR ==========
+// ========== MODE CLAIR/SOMBRE AVEC FORCE IMMÉDIATE ==========
 const themeToggleNav = document.getElementById('themeToggleNav');
 const themeIconNav = document.getElementById('themeIconNav');
 
 function toggleTheme() {
-  document.body.classList.toggle('light-mode');
-  const isLightMode = document.body.classList.contains('light-mode');
+  // Récupère l'état actuel
+  const isCurrentlyLight = document.body.classList.contains('light-mode');
   
-  if (isLightMode) {
-    if (themeIconNav) {
+  // Change la classe
+  if (isCurrentlyLight) {
+    document.body.classList.remove('light-mode');
+  } else {
+    document.body.classList.add('light-mode');
+  }
+  
+  // Met à jour l'icône
+  const newIsLight = document.body.classList.contains('light-mode');
+  if (themeIconNav) {
+    if (newIsLight) {
       themeIconNav.classList.remove('fa-moon');
       themeIconNav.classList.add('fa-sun');
-    }
-    localStorage.setItem('theme', 'light');
-    // Mettre à jour la navbar
-    if (navbar && !navbar.matches(':hover')) {
-      navbar.style.background = 'rgba(255, 255, 255, 0.85)';
-    }
-  } else {
-    if (themeIconNav) {
+    } else {
       themeIconNav.classList.remove('fa-sun');
       themeIconNav.classList.add('fa-moon');
     }
-    localStorage.setItem('theme', 'dark');
-    // Mettre à jour la navbar
-    if (navbar && !navbar.matches(':hover')) {
-      navbar.style.background = 'rgba(10, 10, 20, 0.75)';
-    }
   }
+  
+  // FORCE L'APPLICATION IMMÉDIATE SUR LA NAVBAR
+  const navbar = document.querySelector('.navbar');
+  if (navbar) {
+    // Force le reflow du navigateur
+    navbar.style.transform = 'translateZ(0)';
+    // Applique la couleur de fond directement
+    if (newIsLight) {
+      navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.85)';
+    } else {
+      navbar.style.backgroundColor = 'rgba(10, 10, 20, 0.75)';
+    }
+    // Force un autre reflow
+    void navbar.offsetHeight;
+    // Retire le hack
+    setTimeout(() => {
+      navbar.style.transform = '';
+    }, 50);
+  }
+  
+  // Sauvegarde
+  localStorage.setItem('theme', newIsLight ? 'light' : 'dark');
 }
 
 // Charger le thème sauvegardé
@@ -180,6 +146,16 @@ if (savedThemeNav === 'light') {
     themeIconNav.classList.remove('fa-moon');
     themeIconNav.classList.add('fa-sun');
   }
+  // Force la couleur de fond au chargement
+  const navbar = document.querySelector('.navbar');
+  if (navbar) {
+    navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.85)';
+  }
+}
+
+// Ajouter l'événement
+if (themeToggleNav) {
+  themeToggleNav.addEventListener('click', toggleTheme);
 }
 
 // Ajouter l'événement au nouveau bouton
