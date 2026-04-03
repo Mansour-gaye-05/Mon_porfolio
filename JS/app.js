@@ -548,3 +548,86 @@ function updateProjectCount() {
     counter.textContent = `${visible} / ${total} projets`;
   }
 }
+
+// ========== PARTICULES SUR TOUTE LA PAGE ==========
+function createBgParticles() {
+  const particleContainer = document.createElement('div');
+  particleContainer.className = 'particle-bg';
+  document.body.appendChild(particleContainer);
+  
+  for (let i = 0; i < 50; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    
+    const size = Math.random() * 4 + 1;
+    const left = Math.random() * 100;
+    const delay = Math.random() * 10;
+    const duration = Math.random() * 10 + 8;
+    
+    particle.style.width = size + 'px';
+    particle.style.height = size + 'px';
+    particle.style.left = left + '%';
+    particle.style.animationDelay = delay + 's';
+    particle.style.animationDuration = duration + 's';
+    
+    particleContainer.appendChild(particle);
+  }
+}
+
+createBgParticles();
+
+// ========== ANIMATION MACHINE À ÉCRIRE EN BOUCLE ==========
+(function initTypeWriter() {
+  window.addEventListener('load', function() {
+    const heroTitle = document.querySelector('.hero__title');
+    if (!heroTitle) {
+      console.log('Element .hero__title non trouvé');
+      return;
+    }
+    
+    // Sauvegarder le texte original
+    const originalText = heroTitle.getAttribute('data-text');
+    if (!originalText) return;
+    
+    let isDeleting = false;
+    let i = 0;
+    const speed = 80; // vitesse d'écriture
+    const deleteSpeed = 40; // vitesse d'effacement
+    const pauseTime = 1500; // pause entre écriture et effacement (1.5 secondes)
+    
+    function typeWriter() {
+      if (!isDeleting && i <= originalText.length) {
+        // Phase d'écriture
+        heroTitle.textContent = originalText.substring(0, i);
+        i++;
+        
+        if (i > originalText.length) {
+          // Texte complètement écrit, pause puis effacement
+          isDeleting = true;
+          setTimeout(typeWriter, pauseTime);
+          return;
+        }
+        
+        setTimeout(typeWriter, speed);
+        
+      } else if (isDeleting && i >= 0) {
+        // Phase d'effacement
+        heroTitle.textContent = originalText.substring(0, i);
+        i--;
+        
+        if (i < 0) {
+          // Texte complètement effacé, recommencer
+          isDeleting = false;
+          i = 0;
+          setTimeout(typeWriter, speed);
+          return;
+        }
+        
+        setTimeout(typeWriter, deleteSpeed);
+      }
+    }
+    
+    // Démarrer l'animation
+    setTimeout(typeWriter, 500);
+  });
+})();

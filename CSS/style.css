@@ -2822,3 +2822,96 @@ body {
     opacity: 0;
   }
 }
+
+/* ========== ANIMATION SUR TOUTE LA PAGE ========== */
+body {
+  animation: pageGlow 8s ease-in-out infinite;
+  transition: background 0.5s ease;
+}
+
+@keyframes pageGlow {
+  0% {
+    background-color: #0a0a0a;
+    box-shadow: inset 0 0 0px rgba(212, 175, 55, 0);
+  }
+  50% {
+    background-color: #111122;
+    box-shadow: inset 0 0 50px rgba(212, 175, 55, 0.05);
+  }
+  100% {
+    background-color: #0a0a0a;
+    box-shadow: inset 0 0 0px rgba(212, 175, 55, 0);
+  }
+}
+
+/* Mode clair */
+body.light-mode {
+  animation: pageGlowLight 8s ease-in-out infinite;
+}
+
+@keyframes pageGlowLight {
+  0% {
+    background-color: #f5f7fa;
+  }
+  50% {
+    background-color: #e8ecf2;
+  }
+  100% {
+    background-color: #f5f7fa;
+  }
+}
+
+/* ========== PARTICULES SUR TOUTE LA PAGE ========== */
+.particle-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: rgba(212, 175, 55, 0.4);
+  border-radius: 50%;
+  animation: floatBg 12s linear infinite;
+}
+
+@keyframes floatBg {
+  0% {
+    transform: translateY(100vh) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-20vh) translateX(30px);
+    opacity: 0;
+  }
+}
+
+.hero__title {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.95rem;
+  letter-spacing: 0.15em;
+  color: #d4af37;
+  margin-bottom: 1.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  display: inline-block;
+  min-height: 3rem;
+}
+
+/* Mode clair */
+body.light-mode .hero__title {
+  color: #b8860b;
+}
