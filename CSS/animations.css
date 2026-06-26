@@ -603,8 +603,8 @@ body.light-mode .form-field label { color: rgba(0,0,0,0.4); }
 .lang-name   { font-weight:600; font-size:0.95rem; }
 .lang-level  { margin-left:auto; font-size:0.72rem; padding:0.2rem 0.6rem; border-radius:20px; font-family:'Space Mono',monospace; }
 .lang-level--native       { background:rgba(212,175,55,0.15); color:var(--gold); border:1px solid rgba(212,175,55,0.3); }
-.lang-level--fluent       { background:rgba(100,200,120,0.12); color:#6cc88a; border:1px solid rgba(100,200,120,0.3); }
-.lang-level--intermediate { background:rgba(100,160,220,0.12); color:#7ab0e0; border:1px solid rgba(100,160,220,0.3); }
+.lang-level--fluent       { background:rgba(212,175,55,0.15); color:var(--gold); border:1px solid rgba(212,175,55,0.3); }
+.lang-level--intermediate { background:rgba(212,175,55,0.15); color:var(--gold); border:1px solid rgba(212,175,55,0.3); }
 
 /* ================================================================
    14. ÉTATS PROJETS DÉSACTIVÉS
