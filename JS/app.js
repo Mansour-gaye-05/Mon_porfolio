@@ -35,7 +35,7 @@
       'journey.l2.title':'Licence en Géomatique <em>(L2)</em>',
       'journey.l2.desc':'Formation pluridisciplinaire alliant cartographie, SIG, télédétection, analyse spatiale et développement de solutions numériques.',
       'journey.dev.title':'Auto-formation <em>Développement Web</em>',
-      'journey.dev.desc':'Apprentissage continu du développement web front-end : HTML5, CSS3, JavaScript, Python.',
+      'journey.dev.desc':'Apprentissage continu du développement web front-end : HTML, CSS, JavaScript, Python.',
       'journey.bac.title':'Baccalauréat <em>Série S</em>',
       'journey.bac.desc':'Obtention du baccalauréat scientifique. Base solide en mathématiques et sciences.',
       'projects.title':'Mes <em>Projets</em>',
