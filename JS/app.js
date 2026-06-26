@@ -309,7 +309,7 @@
     navbar.style.backgroundColor = isLight ? 'rgba(255,255,255,0.85)' : 'rgba(10,10,20,0.75)';
     localStorage.setItem('theme', isLight ? 'light' : 'dark');
   }
-  applyTheme(localStorage.getItem('theme') !== 'dark');
+  applyTheme(localStorage.getItem('theme') === 'light');
   if (themeToggle) themeToggle.addEventListener('click', () => applyTheme(!document.body.classList.contains('light-mode')));
 
   /* ================================================================
