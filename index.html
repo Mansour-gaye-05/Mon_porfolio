@@ -1,467 +1,462 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" id="html-root">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio de Serigne Mansour Gaye — Étudiant en Géomatique & Développeur Web Junior.">
+  <meta name="description" content="Portfolio de Serigne Mansour Gaye — Étudiant en Géomatique & Développeur Web, Université Iba Der Thiam de Thiès.">
   <meta property="og:title" content="Portfolio — Serigne Mansour Gaye">
-  <meta property="og:description" content="Étudiant en L2 Géomatique · Développeur Web Junior · HTML · CSS · JavaScript">
+  <meta property="og:description" content="Étudiant L2 Géomatique · SIG · Développement Web · Université Iba Der Thiam de Thiès">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="Image/Profil.jpg">
   <title>Serigne Mansour Gaye — Portfolio</title>
-
-  <!-- Google Fonts -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗺️</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- Styles CSS -->
   <link rel="stylesheet" href="CSS/style.css">
   <link rel="stylesheet" href="CSS/animations.css">
 </head>
 <body>
 
-  <!-- Navigation -->
-  <header>
-    <nav class="navbar" id="navbar">
-      <a href="#accueil" class="nav-logo">S.M.G</a>
+<!-- ═══════════ NAVBAR ═══════════ -->
+<header>
+  <nav class="navbar" id="navbar">
+    <a href="#accueil" class="nav-logo">S.M.G</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+    </button>
+    <ul class="nav-links" id="navMenu">
+      <li><a href="#accueil"       class="nav-link nav-link--active" data-i18n="nav.home">Accueil</a></li>
+      <li><a href="#apropos"       class="nav-link" data-i18n="nav.about">À propos</a></li>
       
-      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
-        <span class="nav-toggle__bar"></span>
-        <span class="nav-toggle__bar"></span>
-        <span class="nav-toggle__bar"></span>
+      <li><a href="#competences"   class="nav-link" data-i18n="nav.skills">Compétences</a></li>
+      
+      <li><a href="#parcours"      class="nav-link" data-i18n="nav.journey">Parcours</a></li>
+      <li><a href="#projets"       class="nav-link" data-i18n="nav.projects">Projets</a></li>
+      
+      
+      
+      <li><a href="#contact"       class="nav-link" data-i18n="nav.contact">Contact</a></li>
+    </ul>
+    <div class="nav-controls">
+      <button class="lang-toggle" id="langToggle" aria-label="Changer de langue">
+        <span id="langFlag">🇫🇷</span> <span id="langCode">FR</span>
       </button>
-      
-      <ul class="nav-links" id="navMenu">
-        <li><a href="#accueil" class="nav-link nav-link--active">Accueil</a></li>
-        <li><a href="#competences" class="nav-link">Compétences</a></li>
-        <li><a href="#projets" class="nav-link">Projets</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-      
-      <!-- Bouton mode clair/sombre intégré dans la navbar -->
       <button class="theme-toggle-nav" id="themeToggleNav" aria-label="Changer de mode">
         <i class="fas fa-moon" id="themeIconNav"></i>
-        <span class="theme-text">Mode</span>
       </button>
-    </nav>
-  </header>
+    </div>
+  </nav>
+</header>
 
-  <main>
-    <!-- SECTION ACCUEIL -->
-    <section id="accueil" class="section section--hero">
-      <div class="container">
-        <div class="hero">
-          <div class="hero__text">
-            <p class="hero__eyebrow">Étudiant en Géomatique &amp; Développeur Web</p>
-            <h1 class="hero__name">Serigne Mansour<br><em>GAYE</em></h1>
-            <p class="hero__title" data-text="// L2 Géomatique · Développeur Web Junior"></p>
-            <div class="hero__bio" id="heroBio">
-              Étudiant en Licence 2 Géomatique et passionné par le développement web et les
-              technologies de l'information géographique. J'aime créer des applications et des
-              sites web qui permettent de valoriser les données et de résoudre des problèmes concrets.
-            </div>
-            <div class="hero__socials">
-              <a href="https://github.com/Mansour-gaye-05/" target="_blank" rel="noopener noreferrer" class="hero__social-link" aria-label="GitHub">
-                <i class="fab fa-github"></i><span>GitHub</span>
-              </a>
-              <a href="https://www.linkedin.com/in/serigne-mansour-gaye-20a459375/" target="_blank" rel="noopener noreferrer" class="hero__social-link" aria-label="LinkedIn">
-                <i class="fab fa-linkedin-in"></i><span>LinkedIn</span>
-              </a>
-            </div>
-            <br>
-            <div class="hero__actions">
-              <a href="#projets" class="btn btn--primary">Voir mes projets</a>
-              <a href="#contact" class="btn btn--ghost">Me contacter</a>
-              <a href="../CV_SMG.pdf" class="btn btn--cv" download>
-                <i class="fas fa-file-arrow-down"></i> CV
-              </a>
-            </div>
-          </div>
-          <div class="hero__visual">
-            <div class="avatar-frame">
-              <div class="avatar-ring">
-                <div class="avatar-circle">
-                  <img src="Image/Profil.jpg" alt="Portrait de Serigne Mansour Gaye">
-                </div>
-              </div>
-              <span class="avatar-frame__label">// Serigne Mansour GAYE · 2026</span>
-              <span class="avatar-location">
-                <i class="fas fa-map-marker-alt"></i> Diourbel, Sénégal
-              </span>
-            </div>
-          </div>
+<main>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section id="accueil" class="section section--hero">
+  <div class="container">
+    <div class="hero">
+      <div class="hero__text">
+        <p class="hero__eyebrow" data-i18n="hero.eyebrow">Étudiant en Géomatique &amp; Développeur Web</p>
+        <h1 class="hero__name">Serigne Mansour<br><em>GAYE</em></h1>
+        <p class="hero__title" data-text="// L2 Géomatique · SIG · Développeur Web"></p>
+        <div class="hero__bio" data-i18n="hero.bio">
+          Étudiant en Licence 2 Géomatique à l'Université Iba Der Thiam de Thiès, passionné
+          par les Systèmes d'Information Géographique, l'analyse spatiale et le développement
+          web géospatial. Je crée des solutions numériques qui valorisent la donnée territoriale.
+        </div>
+        <div class="hero__socials">
+          <a href="https://github.com/Mansour-gaye-05/" target="_blank" rel="noopener noreferrer" class="hero__social-link" aria-label="GitHub">
+            <i class="fab fa-github"></i><span>GitHub</span>
+          </a>
+          <a href="https://www.linkedin.com/in/serigne-mansour-gaye-20a459375/" target="_blank" rel="noopener noreferrer" class="hero__social-link" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i><span>LinkedIn</span>
+          </a>
+        </div>
+        <div class="hero__actions">
+          <a href="#projets" class="btn btn--primary" data-i18n="hero.btn.projects">Voir mes projets</a>
+          <a href="#apropos" class="btn btn--ghost" data-i18n="hero.btn.about">À propos</a>
+          <a href="CV_SMG.pdf" class="btn btn--cv" download>
+            <i class="fas fa-file-arrow-down"></i> CV
+          </a>
         </div>
       </div>
-    </section>
-
-    <!-- SECTION COMPÉTENCES -->
-    <section id="competences" class="section">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-header__number">01</span>
-          <h2 class="section-header__title">Compé<em>tences</em></h2>
-          <div class="section-header__line"></div>
-        </div>
-        
-        <!-- Compétences techniques en développement web et programmation -->
-        <div class="skills-category reveal">
-          <div class="skills-category-header">
-            <i class="fas fa-code"></i>
-            <h3 class="skills-category-title">Compétences techniques en développement web et programmation</h3>
-            <div class="skills-category-line"></div>
-          </div>
-          <div class="skills-grid">
-            <div class="skill-bar-item">
-              <div class="skill-bar-item__header">
-                <span class="skill-bar-item__name">HTML</span>
-                <span class="skill-bar-item__pct">90%</span>
-              </div>
-              <div class="skill-bar-track">
-                <div class="skill-bar-fill" style="width:90%;"></div>
-              </div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-bar-item__header">
-                <span class="skill-bar-item__name">CSS</span>
-                <span class="skill-bar-item__pct">85%</span>
-              </div>
-              <div class="skill-bar-track">
-                <div class="skill-bar-fill" style="width:85%;"></div>
-              </div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-bar-item__header">
-                <span class="skill-bar-item__name">JavaScript</span>
-                <span class="skill-bar-item__pct">75%</span>
-              </div>
-              <div class="skill-bar-track">
-                <div class="skill-bar-fill" style="width:75%;"></div>
-              </div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-bar-item__header">
-                <span class="skill-bar-item__name">Python</span>
-                <span class="skill-bar-item__pct">65%</span>
-              </div>
-              <div class="skill-bar-track">
-                <div class="skill-bar-fill" style="width:65%;"></div>
-              </div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-bar-item__header">
-                <span class="skill-bar-item__name">POO</span>
-                <span class="skill-bar-item__pct">55%</span>
-              </div>
-              <div class="skill-bar-track">
-                <div class="skill-bar-fill" style="width:55%;"></div>
-              </div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-bar-item__header">
-                <span class="skill-bar-item__name">SQL</span>
-                <span class="skill-bar-item__pct">60%</span>
-              </div>
-              <div class="skill-bar-track">
-                <div class="skill-bar-fill" style="width:60%;"></div>
-              </div>
+      <div class="hero__visual">
+        <div class="avatar-frame">
+          <div class="avatar-ring">
+            <div class="avatar-circle">
+              <img src="Image/Profil.jpg" alt="Portrait de Serigne Mansour Gaye">
             </div>
           </div>
-        </div>
-        
-        <!-- Logiciels & Outils -->
-        <div class="skills-category reveal">
-          <div class="skills-category-header">
-            <i class="fas fa-tools"></i>
-            <h3 class="skills-category-title">Logiciels & Outils</h3>
-            <div class="skills-category-line"></div>
-          </div>
-          <div class="skills-grid">
-            <div class="skill-bar-item">
-              <div class="skill-bar-item__header">
-                <span class="skill-bar-item__name">QGIS</span>
-                <span class="skill-bar-item__pct">88%</span>
-              </div>
-              <div class="skill-bar-track">
-                <div class="skill-bar-fill" style="width:88%;"></div>
-              </div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-bar-item__header">
-                <span class="skill-bar-item__name">ArcGIS</span>
-                <span class="skill-bar-item__pct">70%</span>
-              </div>
-              <div class="skill-bar-track">
-                <div class="skill-bar-fill" style="width:70%;"></div>
-              </div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-bar-item__header">
-                <span class="skill-bar-item__name">R / RStudio</span>
-                <span class="skill-bar-item__pct">78%</span>
-              </div>
-              <div class="skill-bar-track">
-                <div class="skill-bar-fill" style="width:78%;"></div>
-              </div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-bar-item__header">
-                <span class="skill-bar-item__name">AutoCAD</span>
-                <span class="skill-bar-item__pct">75%</span>
-              </div>
-              <div class="skill-bar-track">
-                <div class="skill-bar-fill" style="width:75%;"></div>
-              </div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-bar-item__header">
-                <span class="skill-bar-item__name">KoboToolbox</span>
-                <span class="skill-bar-item__pct">70%</span>
-              </div>
-              <div class="skill-bar-track">
-                <div class="skill-bar-fill" style="width:70%;"></div>
-              </div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-bar-item__header">
-                <span class="skill-bar-item__name">VS Code</span>
-                <span class="skill-bar-item__pct">85%</span>
-              </div>
-              <div class="skill-bar-track">
-                <div class="skill-bar-fill" style="width:85%;"></div>
-              </div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-bar-item__header">
-                <span class="skill-bar-item__name">Pycharm</span>
-                <span class="skill-bar-item__pct">65%</span>
-              </div>
-              <div class="skill-bar-track">
-                <div class="skill-bar-fill" style="width:65%;"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="skills-description reveal">
-          <p><i class="fas fa-code"></i> À la croisée du développement web et de la géomatique, je conçois 
-            des solutions modernes, performantes et centrées sur la valorisation des données spatiales.</p>
+          <span class="avatar-frame__label">// Serigne Mansour GAYE · 2026</span>
+          <span class="avatar-location"><i class="fas fa-map-marker-alt"></i> Thiès, Sénégal</span>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- SECTION PROJETS -->
-    <section id="projets" class="section section--dark">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-header__number">02</span>
-          <h2 class="section-header__title">Mes <em>Projets</em></h2>
-          <div class="section-header__line"></div>
-        </div>
-    
-        <!-- ========== FILTRE DES PROJETS ========== -->
-        <div class="projects-filter reveal">
-          <div class="filter-buttons">
-            <button class="filter-btn active" data-filter="all">Tous</button>
-            <button class="filter-btn" data-filter="2025">2025</button>
-            <button class="filter-btn" data-filter="2026">2026</button>
-            <button class="filter-btn" data-filter="encours">En cours</button>
+<!-- ═══════════ À PROPOS ═══════════ -->
+<section id="apropos" class="section section--dark">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-header__number">01</span>
+      <h2 class="section-header__title" data-i18n="about.title">À pro<em>pos</em></h2>
+      <div class="section-header__line"></div>
+    </div>
+    <div class="about-layout">
+      <div class="about-text reveal">
+        <p class="about-intro" data-i18n="about.intro">
+          Étudiant en <strong>Licence 2 Géomatique</strong> à l'Université Iba Der Thiam de Thiès (UIDT),
+          je suis passionné par l'intersection entre les technologies géospatiales et le développement numérique.
+          Mon parcours m'a conduit à maîtriser à la fois les outils SIG professionnels et les langages du web,
+          avec pour ambition de créer des applications qui mettent la donnée géographique au service des décisions.
+        </p>
+        <div class="about-cards">
+          <div class="about-card reveal">
+            <div class="about-card__icon"><i class="fas fa-crosshairs"></i></div>
+            <h3 data-i18n="about.objective.title">Objectif professionnel</h3>
+            <p data-i18n="about.objective.text">Intégrer une structure où je pourrai contribuer au développement de solutions géospatiales innovantes — cartographie web, analyse spatiale, ou applications de gestion territoriale. Je recherche un <strong>stage</strong> ou une <strong>opportunité de collaboration</strong> dans le domaine du développement web géospatial ou des SIG.</p>
           </div>
-        </div>   
-        <div class="projects-grid" id="projectsContainer">
-          <!-- Projets existants avec data-year -->
-        </div>
-        <div class="projects-grid" id="projectsContainer">
-  
-          <!-- Projet 1 - 2025 -->
-          <article class="project-card reveal" data-year="2025">
-            <div class="project-card__icon-wrap"><i class="fas fa-map"></i></div>
-            <div class="project-card__meta">
-              <span><i class="fas fa-map"></i>
-                Géomatique</span>
-              <span class="project-card__year">2025</span>
-            </div>
-            <h3 class="project-card__name">Cartographie Thématique</h3>
-            <p class="project-card__desc">Création de cartes thématiques spécialisées.</p>
-            <ul class="project-card__tags">
-              <li class="tag">QGIS</li>
-              <li class="tag">ArcGIS</li>
+          <div class="about-card reveal">
+            <div class="about-card__icon"><i class="fas fa-heart"></i></div>
+            <h3 data-i18n="about.interests.title">Centres d'intérêt</h3>
+            <ul class="about-interests">
+              <li><i class="fas fa-map"></i> Cartographie et analyse spatiale</li>
+              <li><i class="fas fa-globe"></i> Développement web géospatial</li>
+              <li><i class="fas fa-city"></i> Aménagement du territoire</li>
+              <li><i class="fas fa-database"></i> Bases de données spatiales</li>
+              <li><i class="fas fa-satellite"></i> Télédétection &amp; SIG</li>
+              <li><i class="fas fa-code"></i> Open source &amp; projets web</li>
             </ul>
-            <div class="project-card__actions">
-              <a href="#" target="_blank" class="project-card__link"><i class="fas fa-eye"></i> Voir le projet</a>
-              <a href="#" download class="project-card__download"><i class="fas fa-download"></i> Télécharger</a>
+          </div>
+          <div class="about-card reveal">
+            <div class="about-card__icon"><i class="fas fa-search"></i></div>
+            <h3 data-i18n="about.looking.title">Je recherche</h3>
+            <div class="about-seeking">
+              <span class="seeking-badge seeking-badge--active"><i class="fas fa-briefcase"></i> Stage en SIG</span>
+              <span class="seeking-badge seeking-badge--active"><i class="fas fa-code"></i> Projet Web</span>
+              <span class="seeking-badge"><i class="fas fa-handshake"></i> Collaboration</span>
+              <span class="seeking-badge"><i class="fas fa-graduation-cap"></i> Alternance</span>
             </div>
-          </article>
-
-          <!-- Projet 2 - 2025 -->
-          <article class="project-card reveal" data-year="2025">
-            <div class="project-card__icon-wrap"><i class="fas fa-home"></i></div>
-            <div class="project-card__meta">
-              <span><i class="fas fa-home"></i>
-                Architecture</span>
-              <span class="project-card__year">2025</span>
-            </div>
-            <h3 class="project-card__name">Plan de Maison</h3>
-            <p class="project-card__desc">Conception d'un plan architectural complet.</p>
-            <ul class="project-card__tags">
-              <li class="tag">AutoCAD</li>
-              <li class="tag">Dessin Technique</li>
-            </ul>
-            <div class="project-card__actions">
-              <a href="../Projet plan maison.pdf" target="_blank" class="project-card__link"><i class="fas fa-eye"></i> Voir le projet</a>
-              <a href="../Projet plan maison.pdf" download class="project-card__download"><i class="fas fa-download"></i> Télécharger</a>
-            </div>
-          </article>
-
-          <!-- Projet 3 - 2026 -->
-          <article class="project-card reveal" data-year="2026">
-            <div class="project-card__icon-wrap"><i class="fas fa-chart-bar"></i></div>
-            <div class="project-card__meta">
-              <span><i class="fas fa-chart-bar"></i>
-                Géomatique</span>
-              <span class="project-card__year">2026</span>
-            </div>
-            <h3 class="project-card__name">Analyse des Données</h3>
-            <p class="project-card__desc">Traitement et visualisation de données géospatiales pour identifier des tendances territoriales.</p>
-            <ul class="project-card__tags">
-              <li class="tag">RStudio</li>
-              <li class="tag">R Markdown</li>
-            </ul>
-            <div class="project-card__actions">
-              <a href="../Projet Analyse 3.pdf" target="_blank" class="project-card__link"><i class="fas fa-eye"></i> Voir le projet</a>
-              <a href="../Projet Analyse 3.pdf" download class="project-card__download"><i class="fas fa-download"></i> Télécharger</a>
-            </div>
-          </article>
-
-          <!-- Projet 4 - 2026 -->
-          <article class="project-card reveal" data-year="2026">
-            <div class="project-card__icon-wrap"><i class="fas fa-clipboard-list"></i></div>
-            <div class="project-card__meta">
-              <span><i class="fas fa-clipboard-list"></i>
-                Terrain</span>
-              <span class="project-card__year">2026</span>
-            </div>
-            <h3 class="project-card__name">Méthode de Collecte</h3>
-            <p class="project-card__desc">Conception d'une méthodologie de collecte de données sur le terrain.</p>
-            <ul class="project-card__tags">
-              <li class="tag">KoboToolbox</li>
-              <li class="tag">QGIS</li>
-            </ul>
-            <div class="project-card__actions">
-              <a href="../PROJET_Ndoncky 2026.pdf" target="_blank" class="project-card__link"><i class="fas fa-eye"></i> Voir le projet</a>
-              <a href="../PROJET_Ndoncky 2026.pdf" download class="project-card__download"><i class="fas fa-download"></i> Télécharger</a>
-            </div>
-          </article>
-
-          <!-- Projet 5 - 2026 -->
-          <article class="project-card reveal" data-year="2026">
-            <div class="project-card__icon-wrap"><i class="fas fa-code"></i></div>
-            <div class="project-card__meta">
-              <span><i class="fas fa-code"></i>
-                Web</span>
-              <span class="project-card__year">2026</span>
-            </div>
-            <h3 class="project-card__name">Développement Web</h3>
-            <p class="project-card__desc">Création de sites web modernes et responsifs.</p>
-            <ul class="project-card__tags">
-              <li class="tag">HTML</li>
-              <li class="tag">CSS</li>
-              <li class="tag">JavaScript</li>
-            </ul>
-            <div class="project-card__actions">
-              <a href="#" target="_blank" class="project-card__link"><i class="fas fa-eye"></i> Voir le projet</a>
-              <a href="#" download class="project-card__download"><i class="fas fa-download"></i> Télécharger</a>
-            </div>
-          </article>
-
-          <!-- Projet 6 - Gestion de matérielles (En cours) -->
-          <article class="project-card reveal" data-year="encours">
-            <div class="project-card__icon-wrap">
-              <i class="fas fa-laptop"></i>
-            </div>
-            <div class="project-card__meta">
-              <span><i class="fas fa-laptop" style="margin-right:0.4rem;"></i>
-                Gestion</span>
-              <span class="project-card__year">En cours</span>
-            </div>
-            <h3 class="project-card__name">Gestion de Matériels</h3>
-            <p class="project-card__desc">
-              Application de gestion des matériels permettant de suivre, 
-              organiser et contrôler l'utilisation des équipements.
+            <p class="about-availability" data-i18n="about.availability">
+              <i class="fas fa-circle" style="color:#1D9E75;font-size:.6rem;"></i>
+              Disponible — Thiès
             </p>
-            <ul class="project-card__tags">
-              <li class="tag">Pycharm</li>
-              <li class="tag">MySQL</li>
-            </ul>
-            <div class="project-card__actions">
-              <a href="#" target="_blank" class="project-card__link">
-                <i class="fas fa-eye"></i> Voir le projet
-              </a>
-              <a href="#" download class="project-card__download">
-                <i class="fas fa-download"></i> Télécharger
-              </a>
-            </div>
-          </article>
-        </div>
-    </section>
-
-    <!-- SECTION CONTACT -->
-    <section id="contact" class="section section--dark">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-header__number">03</span>
-          <h2 class="section-header__title">Con<em>tact</em></h2>
-          <div class="section-header__line"></div>
-        </div>
-        <div class="contact-layout">
-          <div class="contact-info reveal">
-            <h3 class="contact-info__heading">Travaillons <em>ensemble</em></h3>
-            <p class="contact-info__text">Je suis à votre disposition pour toute opportunité professionnelle ou collaboration.</p>
-            <ul class="contact-socials">
-              <li><a href="https://www.linkedin.com/in/serigne-mansour-gaye-20a459375/" class="social-link">LinkedIn</a></li>
-              <li><a href="https://github.com/Mansour-gaye-05/" class="social-link">GitHub</a></li>
-            </ul>
           </div>
-          <form class="contact-form reveal" id="contactForm" novalidate>
-            <div class="form-field">
-              <input type="text" id="name" placeholder=" " required>
-              <label for="name">Nom</label>
-            </div>
-            <div class="form-field">
-              <input type="email" id="email" placeholder=" " required>
-              <label for="email">Email</label>
-            </div>
-            <div class="form-field">
-              <textarea id="message" placeholder=" " rows="5" required></textarea>
-              <label for="message">Message</label>
-            </div>
-            <button type="submit" class="btn--outline">Envoyer</button>
-          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ═══════════ COMPÉTENCES ═══════════ -->
+<section id="competences" class="section section--dark">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-header__number">02</span>
+      <h2 class="section-header__title" data-i18n="skills.title">Compé<em>tences</em></h2>
+      <div class="section-header__line"></div>
+    </div>
+
+    <!-- Dev Web -->
+    <div class="skills-category reveal">
+      <div class="skills-category-header">
+        <i class="fas fa-code"></i>
+        <h3 class="skills-category-title" data-i18n="skills.web">Développement Web &amp; Programmation</h3>
+        <div class="skills-category-line"></div>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-bar-item"><div class="skill-bar-item__header"><span class="skill-bar-item__name"><img class="skill-logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48cGF0aCBmaWxsPSIjRTQ0RDI2IiBkPSJNMTkuMDM3IDExMy44NzZMOS4wMzIgMS42NjFoMTA5LjkzNmwtMTAuMDE2IDExMi4xOTgtNDUuMDE5IDEyLjQ4eiIvPjxwYXRoIGZpbGw9IiNGMTY1MjkiIGQ9Ik02NCAxMTYuOGwzNi4zNzgtMTAuMDg2IDguNTU5LTk1Ljg3OEg2NHoiLz48cGF0aCBmaWxsPSIjRUJFQkVCIiBkPSJNNjQgNTIuNDU1SDQ1Ljc4OEw0NC41MyAzOC4zNjFINjRWMjQuNTk5SDI5LjQ4OWwuMzMgMy42OTIgMy4zODIgMzcuOTI3SDY0em0wIDM1Ljc0M2wtLjA2MS4wMTctMTUuMzI3LTQuMTQtLjk3OS0xMC45NzVIMzMuODE2bDEuOTI4IDIxLjYwOSAyOC4xOTMgNy44MjYuMDYzLS4wMTd6Ii8+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTYzLjk1MiA1Mi40NTV2MTMuNzYzaDE2Ljk0N2wtMS41OTcgMTcuODQ5LTE1LjM1IDQuMTQzdjE0LjMxOWwyOC4yMTUtNy44Mi4yMDctMi4zMjUgMy4yMzQtMzYuMjMzLjMzNS0zLjY5NmgtMy43MDh6bTAtMjcuODU2djEzLjc2MmgzMy4yNDRsLjI3Ni0zLjA5Mi42MjgtNi45NzguMzI5LTMuNjkyeiIvPjwvc3ZnPg==" alt="HTML5" style="width:18px;height:18px;">HTML</span><span class="skill-bar-item__pct">90%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="90%" style="width:90%;"></div></div></div>
+        <div class="skill-bar-item"><div class="skill-bar-item__header"><span class="skill-bar-item__name"><img class="skill-logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48cGF0aCBmaWxsPSIjMTU3MkI2IiBkPSJNMTguODE0IDExNC4xMjNMOC43NiAxLjM1MmgxMTAuNDhsLTEwLjA2NCAxMTIuNzU0LTQ1LjI0MyAxMi41NDMtNDUuMTE5LTEyLjUyNnoiLz48cGF0aCBmaWxsPSIjMzNBOURDIiBkPSJNNjQuMDAxIDExNy4wNjJsMzYuNTU5LTEwLjEzNiA4LjYwMS05Ni4zNTRoLTQ1LjE2djEwNi40OXoiLz48cGF0aCBmaWxsPSIjZmZmIiBkPSJNNjQuMDAxIDUxLjQyOWgxOC4zMDJsMS4yNjQtMTQuMTYzSDY0LjAwMVYyMy40MzVoMzQuNjgybC0uMzMyIDMuNzExLTMuNCAzOC4xMTRoLTMwLjk1VjUxLjQyOXoiLz48cGF0aCBmaWxsPSIjRUJFQkVCIiBkPSJNNjQuMDgzIDg3LjM0OWwtLjA2MS4wMTgtMTUuNDAzLTQuMTU5LS45ODUtMTEuMDMxSDMzLjc1MmwxLjkzNyAyMS43MTcgMjguMzMxIDcuODYzLjA2My0uMDE4di0xNC4zOXoiLz48cGF0aCBmaWxsPSIjZmZmIiBkPSJNODEuMTI3IDY0LjY3NWwtMS42NjYgMTguNTIyLTE1LjQyNiA0LjE2NHYxNC4zOWwyOC4zNTQtNy44NTguMjA4LTIuMzM3IDIuNDA2LTI2Ljg4MUg4MS4xMjd6Ii8+PHBhdGggZmlsbD0iI0VCRUJFQiIgZD0iTTY0LjA0OCAyMy40MzV2MTMuODMxSDMwLjY0bC0uMjc3LTMuMTA4LS42My03LjAxMi0uMzMxLTMuNzExaDM0LjY0NnptLS4wNDcgMjcuOTk2djEzLjgzMUg0OC43OTJsLS4yNzctMy4xMDgtLjYzMS03LjAxMi0uMzMtMy43MTFoMTYuNDQ3eiIvPjwvc3ZnPg==" alt="CSS3" style="width:18px;height:18px;">CSS</span><span class="skill-bar-item__pct">85%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="85%" style="width:85%;"></div></div></div>
+        <div class="skill-bar-item"><div class="skill-bar-item__header"><span class="skill-bar-item__name"><img class="skill-logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48cGF0aCBmaWxsPSIjRjBEQjRGIiBkPSJNMS40MDggMS40MDhoMTI1LjE4NHYxMjUuMTg1SDEuNDA4eiIvPjxwYXRoIGZpbGw9IiMzMjMzMzAiIGQ9Ik0xMTYuMzQ3IDk2LjczNmMtLjkxNy01LjcxMS00LjY0MS0xMC41MDgtMTUuNjcyLTE0Ljk4MS0zLjgzMi0xLjc2MS04LjEwNC0zLjAyMi05LjM3Ny01LjkyNi0uNDUyLTEuNjktLjUxMi0yLjY0Mi0uMjI2LTMuNjY1LjgyMS0zLjMyIDQuNzg0LTQuMzU1IDcuOTI1LTMuNDAzIDIuMDIzLjY3OCAzLjkzOCAyLjIzNyA1LjA5MyA0LjcyNCA1LjQwMi0zLjQ5OCA1LjM5MS0zLjQ3NSA5LjE2My01Ljg3OS0xLjM4MS0yLjE0MS0yLjExOC0zLjEyOS0zLjAyMi00LjA0NS0zLjI0OS0zLjYyOS03LjY3Ni01LjQ5OC0xNC43NTYtNS4zNTVsLTMuNjg4LjQ3N2MtMy41MzQuODkzLTYuOTAyIDIuNzQ4LTguODc3IDUuMjM1LTUuOTI2IDYuNzI0LTQuMjM2IDE4LjQ5MiAyLjk3NSAyMy4zMzUgNy4xMDQgNS4zMzIgMTcuNTQgNi41NDUgMTguODczIDExLjUzMSAxLjI5NyA2LjEwNC00LjQ4NiA4LjA4LTEwLjIzNCA3LjM3OC00LjIzNi0uODgxLTYuNTkyLTMuMDM0LTkuMTM5LTYuOTQ5LTQuNjg4IDIuNzEzLTQuNjg4IDIuNzEzLTkuNTA4IDUuNDg1IDEuMTQzIDIuNDk5IDIuMzQ0IDMuNjMgNC4yNiA1Ljc5NSA5LjA2OCA5LjE5OCAzMS43NiA4Ljc0NiAzNS44My01LjE3Ni4xNjUtLjQ3OCAxLjI2MS0zLjY2Ni4zOC04LjU4MXpNNjkuNDYyIDU4Ljk0M0g1Ny43NTNsLS4wNDggMzAuMjcyYzAgNi40MzguMzMzIDEyLjM0LS43MTQgMTQuMTQ5LTEuNzEzIDMuNTU4LTYuMTUyIDMuMTE3LTguMTc1IDIuNDI3LTIuMDU5LTEuMDEyLTMuMTA2LTIuNDUxLTQuMzE5LTQuNDg1LS4zMzMtLjU4NC0uNTgzLTEuMDM2LS42NjctMS4wNzFsLTkuNTIgNS44M2MxLjU4MyAzLjI0OSAzLjkxNSA2LjA2OSA2LjkwMiA3LjkwMSA0LjQ2MiAyLjY3OCAxMC40NTkgMy40OTkgMTYuNzMxIDIuMDU5IDQuMDgyLTEuMTg5IDcuNjA0LTMuNjUyIDkuNDQ4LTcuNDAxIDIuNjY2LTQuOTE1IDIuMDk0LTEwLjg2NCAyLjA3LTE3LjQ0NC4wNi0xMC43MzUuMDAxLTIxLjQ2OC4wMDEtMzIuMjM3eiIvPjwvc3ZnPg==" alt="JavaScript" style="width:18px;height:18px;">JavaScript</span><span class="skill-bar-item__pct">75%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="75%" style="width:75%;"></div></div></div>
+        <div class="skill-bar-item"><div class="skill-bar-item__header"><span class="skill-bar-item__name"><img class="skill-logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48bGluZWFyR3JhZGllbnQgaWQ9InB5dGhvbi1vcmlnaW5hbC1hIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjcwLjI1MiIgeTE9IjEyMzcuNDc2IiB4Mj0iMTcwLjY1OSIgeTI9IjExNTEuMDg5IiBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KC41NjMgMCAwIC0uNTY4IC0yOS4yMTUgNzA3LjgxNykiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzVBOUZENCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzMwNjk5OCIvPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IGlkPSJweXRob24tb3JpZ2luYWwtYiIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIyMDkuNDc0IiB5MT0iMTA5OC44MTEiIHgyPSIxNzMuNjIiIHkyPSIxMTQ5LjUzNyIgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCguNTYzIDAgMCAtLjU2OCAtMjkuMjE1IDcwNy44MTcpIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNGRkQ0M0IiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNGRkU4NzMiLz48L2xpbmVhckdyYWRpZW50PjxwYXRoIGZpbGw9InVybCgjcHl0aG9uLW9yaWdpbmFsLWEpIiBkPSJNNjMuMzkxIDEuOTg4Yy00LjIyMi4wMi04LjI1Mi4zNzktMTEuOCAxLjAwNy0xMC40NSAxLjg0Ni0xMi4zNDYgNS43MS0xMi4zNDYgMTIuODM3djkuNDExaDI0LjY5M3YzLjEzN0gyOS45NzdjLTcuMTc2IDAtMTMuNDYgNC4zMTMtMTUuNDI2IDEyLjUyMS0yLjI2OCA5LjQwNS0yLjM2OCAxNS4yNzUgMCAyNS4wOTYgMS43NTUgNy4zMTEgNS45NDcgMTIuNTE5IDEzLjEyNCAxMi41MTloOC40OTFWNjcuMjM0YzAtOC4xNTEgNy4wNTEtMTUuMzQgMTUuNDI2LTE1LjM0aDI0LjY2NWM2Ljg2NiAwIDEyLjM0Ni01LjY1NCAxMi4zNDYtMTIuNTQ4VjE1LjgzM2MwLTYuNjkzLTUuNjQ2LTExLjcyLTEyLjM0Ni0xMi44MzctNC4yNDQtLjcwNi04LjY0NS0xLjAyNy0xMi44NjYtMS4wMDh6TTUwLjAzNyA5LjU1N2MyLjU1IDAgNC42MzQgMi4xMTcgNC42MzQgNC43MjEgMCAyLjU5My0yLjA4MyA0LjY5LTQuNjM0IDQuNjktMi41NiAwLTQuNjMzLTIuMDk3LTQuNjMzLTQuNjktLjAwMS0yLjYwNCAyLjA3My00LjcyMSA0LjYzMy00LjcyMXoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMTAuMjYpIi8+PHBhdGggZmlsbD0idXJsKCNweXRob24tb3JpZ2luYWwtYikiIGQ9Ik05MS42ODIgMjguMzh2MTAuOTY2YzAgOC41LTcuMjA4IDE1LjY1NS0xNS40MjYgMTUuNjU1SDUxLjU5MWMtNi43NTYgMC0xMi4zNDYgNS43ODMtMTIuMzQ2IDEyLjU0OXYyMy41MTVjMCA2LjY5MSA1LjgxOCAxMC42MjggMTIuMzQ2IDEyLjU0NyA3LjgxNiAyLjI5NyAxNS4zMTIgMi43MTMgMjQuNjY1IDAgNi4yMTYtMS44MDEgMTIuMzQ2LTUuNDIzIDEyLjM0Ni0xMi41NDd2LTkuNDEySDYzLjkzOHYtMy4xMzhoMzcuMDEyYzcuMTc2IDAgOS44NTItNS4wMDUgMTIuMzQ4LTEyLjUxOSAyLjU3OC03LjczNSAyLjQ2Ny0xNS4xNzQgMC0yNS4wOTYtMS43NzQtNy4xNDUtNS4xNjEtMTIuNTIxLTEyLjM0OC0xMi41MjFoLTkuMjY4ek03Ny44MDkgODcuOTI3YzIuNTYxIDAgNC42MzQgMi4wOTcgNC42MzQgNC42OTIgMCAyLjYwMi0yLjA3NCA0LjcxOS00LjYzNCA0LjcxOS0yLjU1IDAtNC42MzMtMi4xMTctNC42MzMtNC43MTkgMC0yLjU5NSAyLjA4My00LjY5MiA0LjYzMy00LjY5MnoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMTAuMjYpIi8+PHJhZGlhbEdyYWRpZW50IGlkPSJweXRob24tb3JpZ2luYWwtYyIgY3g9IjE4MjUuNjc4IiBjeT0iNDQ0LjQ1IiByPSIyNi43NDMiIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMCAtLjI0IC0xLjA1NSAwIDUzMi45NzkgNTU3LjU3NikiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNCOEI4QjgiIHN0b3Atb3BhY2l0eT0iLjQ5OCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzdGN0Y3RiIgc3RvcC1vcGFjaXR5PSIwIi8+PC9yYWRpYWxHcmFkaWVudD48cGF0aCBvcGFjaXR5PSIuNDQ0IiBmaWxsPSJ1cmwoI3B5dGhvbi1vcmlnaW5hbC1jKSIgZD0iTTk3LjMwOSAxMTkuNTk3YzAgMy41NDMtMTQuODE2IDYuNDE2LTMzLjA5MSA2LjQxNi0xOC4yNzYgMC0zMy4wOTItMi44NzMtMzMuMDkyLTYuNDE2IDAtMy41NDQgMTQuODE1LTYuNDE3IDMzLjA5Mi02LjQxNyAxOC4yNzUgMCAzMy4wOTEgMi44NzIgMzMuMDkxIDYuNDE3eiIvPjwvc3ZnPgo=" alt="Python" style="width:18px;height:18px;">Python</span><span class="skill-bar-item__pct">65%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="65%" style="width:65%;"></div></div></div>
+        <div class="skill-bar-item"><div class="skill-bar-item__header"><span class="skill-bar-item__name"><img class="skill-logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48cGF0aCBmaWxsPSIjMDA2MThBIiBkPSJNMTE3LjY4OCA5OC4yNDJjLTYuOTczLS4xOTEtMTIuMjk3LjQ2MS0xNi44NTIgMi4zNzktMS4yOTMuNTQ3LTMuMzU1LjU1OS0zLjU2NiAyLjE4LjcxMS43NDYuODIgMS44NTkgMS4zODcgMi43NzcgMS4wODYgMS43NTQgMi45MjIgNC4xMTMgNC41NTkgNS4zNTIgMS43ODkgMS4zNDggMy42MzMgMi43OTMgNS41NTEgMy45NjEgMy40MTQgMi4wODIgNy4yMjMgMy4yNyAxMC41MDQgNS4zNTIgMS45MzggMS4yMyAzLjg1OSAyLjc3NyA1Ljc1IDQuMTY0LjkzNC42ODQgMS41NjMgMS43NSAyLjc3MyAyLjE4di0uMTk1Yy0uNjM3LS44MTItLjgwMS0xLjkzLTEuMzg3LTIuNzc3bC0yLjU3OC0yLjU3OGMtMi41Mi0zLjM0NC01LjcxOS02LjI4MS05LjExNy04LjcxOS0yLjcxMS0xLjk0OS04Ljc4MS00LjU3OC05LjkxLTcuNzNsLS4xOTktLjE5OWMxLjkyMi0uMjE5IDQuMTcyLS45MTQgNS45NDktMS4zOTEgMi45OC0uNzk3IDUuNjQ1LS41OSA4LjcxOS0xLjM4N2w0LjE2NC0xLjE4N3YtLjc5M2MtMS41NTUtMS41OTQtMi42NjQtMy43MDctNC4zNTktNS4xNTItNC40NDEtMy43ODEtOS4yODUtNy41NTUtMTQuMjczLTEwLjcwMy0yLjc2Ni0xLjc0Ni02LjE4NC0yLjg4My05LjExNy00LjM2My0uOTg4LS40OTYtMi43MTktLjc1OC0zLjM3MS0xLjU4Ni0xLjUzOS0xLjk2MS0yLjM3OS00LjQ0OS0zLjU2Ni02LjczOC0yLjQ4OC00Ljc5My00LjkzLTEwLjAyMy03LjEzNy0xNS4wNjYtMS41MDQtMy40MzctMi40ODQtNi44MjgtNC4zNTktOS45MS05LTE0Ljc5Ny0xOC42ODctMjMuNzMtMzMuNjk1LTMyLjUwOC0zLjE5NS0xLjg2Ny03LjAzOS0yLjYwNS0xMS4xMDItMy41N2wtNi41NDMtLjM5NWMtMS4zMzItLjU1NS0yLjcxNS0yLjE4NC0zLjk2NS0yLjk3N0MxNi45NzcgMy41MiA0LjIyMy0zLjMxMi41MzkgNS42NzItMS43ODUgMTEuMzQgNC4wMTYgMTYuODcxIDYuMDkgMTkuNzQ2YzEuNDU3IDIuMDEyIDMuMzIgNC4yNzMgNC4zNTkgNi41MzkuNjg4IDEuNDkyLjgwNSAyLjk4NCAxLjM5MSA0LjU1OSAxLjQzOCAzLjg4MyAyLjY5NSA4LjEwOSA0LjU1OSAxMS42OTUuOTQxIDEuODE2IDEuOTggMy43MjcgMy4xNzIgNS4zNTIuNzI3Ljk5NiAxLjk4IDEuNDM4IDIuMTggMi45NzMtMS4yMjcgMS43MTUtMS4yOTcgNC4zNzUtMS45ODQgNi41NDMtMy4wOTggOS43Ny0xLjkyNiAyMS45MSAyLjU3OCAyOS4xMzcgMS4zODMgMi4yMjMgNC42NDEgNi45OCA5LjExNyA1LjE1NiAzLjkxOC0xLjU5OCAzLjA0My02LjUzOSA0LjE2NC0xMC45MDIuMjU0LS45ODguMDk4LTEuNzE1LjU5NC0yLjM3OXYuMTk5bDMuNTcgNy4xMzNjMi42NDEgNC4yNTQgNy4zMjQgOC42OTkgMTEuMjk3IDExLjY5OSAyLjA1OSAxLjU1NSAzLjY4IDQuMjQyIDYuMzQ0IDUuMTUydi0uMTk5aC0uMTk5Yy0uNTE2LS44MDUtMS4zMjQtMS4xMzctMS45OC0xLjc4MS0xLjU1MS0xLjUyMy0zLjI3Ny0zLjQxNC00LjU1OS01LjE1Ni0zLjYxMy00LjkwMi02LjgwNS0xMC4yNy05LjcxMS0xNS44NTUtMS4zOTEtMi42NjgtMi41OTgtNS42MDktMy43Ny04LjMyNC0uNDUzLTEuMDQ3LS40NDUtMi42MzMtMS4zODctMy4xNzItMS4yODEgMS45ODgtMy4xNzIgMy41OTgtNC4xNjQgNS45NDUtMS41ODIgMy43NTQtMS43ODkgOC4zMzYtMi4zNzUgMTMuMDgyLS4zNDguMTI1LS4xOTUuMDM5LS4zOTguMTk5LTIuNzYyLS42NjgtMy43My0zLjUwOC00Ljc1OC01Ljk0OS0yLjU5NC02LjE2NC0zLjA3OC0xNi4wOS0uNzkzLTIzLjE5MS41OS0xLjgzNiAzLjI2Mi03LjYxNyAyLjE4LTkuMzE2LS41MTYtMS42OTEtMi4yMTktMi42NzItMy4xNzItMy45NjUtMS4xOC0xLjU5OC0yLjM1NS0zLjcwMy0zLjE3Mi01LjU1MS0yLjEyNS00LjgwNS0zLjExMy0xMC4yMDMtNS4zNTItMTUuMDYyLTEuMDctMi4zMjQtMi44NzUtNC42NzYtNC4zNTktNi43MzgtMS42NDUtMi4yODktMy40ODQtMy45NzctNC43NTgtNi43NDItLjQ1My0uOTg0LTEuMDY2LTIuNTU5LS4zOTgtMy41NjYuMjE1LS42ODQuNTE2LS45NjkgMS4xOTEtMS4xOTEgMS4xNDgtLjg4NyA0LjM1Mi4yOTcgNS41NDcuNzkzIDMuMTggMS4zMiA1LjgzMiAyLjU3OCA4LjUyNyA0LjM2MyAxLjI4OS44NTUgMi41OTggMi41MTIgNC4xNiAyLjk3M2gxLjc4NWMyLjc4OS42NDEgNS45MTQuMTk1IDguNTIzLjk4OCA0LjYwOSAxLjQwMiA4LjczOCAzLjU4MiAxMi40ODggNS45NDkgMTEuNDIyIDcuMjE1IDIwLjc2NiAxNy40OCAyNy4xNTYgMjkuNzM0IDEuMDI3IDEuOTczIDEuNDczIDMuODUyIDIuMzc5IDUuOTQ1IDEuODI0IDQuMjE5IDQuMTI1IDguNTU5IDUuOTQxIDEyLjY4OCAxLjgxNiA0LjExMyAzLjU4MiA4LjI3IDYuMTQ4IDExLjY5NSAxLjM0OCAxLjgwMSA2LjU1MSAyLjc2NiA4LjkxOCAzLjc2NiAxLjY2LjY5OSA0LjM3OSAxLjQzIDUuOTQ5IDIuMzc5IDMgMS44MDkgNS45MDYgMy45NjUgOC43MjMgNS45NDUgMS40MDIuOTkyIDUuNzMgMy4xNjggNS45NDUgNC45NTd6bS04OC42MDUtNzUuNTJjLTEuNDUzLS4wMjctMi40OC4xNTYtMy41NjYuMzk1di4xOTloLjE5NWMuNjk1IDEuNDIyIDEuOTE4IDIuMzQgMi43NzcgMy41NjZsMS45OCA0LjE2NC4xOTktLjE5NWMxLjIyNy0uODY3IDEuNzg5LTIuMjUgMS43ODEtNC4zNjMtLjQ5Mi0uNTItLjU2Mi0xLjE2NC0uOTkyLTEuNzg1LS41NjItLjgyNC0xLjY2LTEuMjg5LTIuMzc1LTEuOTh6bTAgMCIvPjwvc3ZnPgo=" alt="MySQL" style="width:18px;height:18px;">SQL</span><span class="skill-bar-item__pct">60%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="60%" style="width:60%;"></div></div></div>
+        <div class="skill-bar-item"><div class="skill-bar-item__header"><span class="skill-bar-item__name"><img class="skill-logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0OCA0OCI+PHJlY3Qgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiByeD0iOCIgZmlsbD0iIzQzNzI5MSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTYlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwgQmxhY2ssQXJpYWwiIGZvbnQtd2VpZ2h0PSI5MDAiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IndoaXRlIj5QT088L3RleHQ+PC9zdmc+" alt="POO" style="width:18px;height:18px;">POO</span><span class="skill-bar-item__pct">55%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="55%" style="width:55%;"></div></div></div>
+      </div>
+    </div>
+
+    <!-- Bureautique -->
+    <div class="skills-category reveal">
+      <div class="skills-category-header">
+        <i class="fas fa-file-alt"></i>
+        <h3 class="skills-category-title" data-i18n="skills.office">Bureautique</h3>
+        <div class="skills-category-line"></div>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-bar-item"><div class="skill-bar-item__header"><span class="skill-bar-item__name"><img class="skill-logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0OCA0OCI+PHJlY3Qgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiByeD0iOCIgZmlsbD0iIzJCNTc5QSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTYlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwgQmxhY2ssQXJpYWwiIGZvbnQtd2VpZ2h0PSI5MDAiIGZvbnQtc2l6ZT0iMjYiIGZpbGw9IndoaXRlIj5XPC90ZXh0Pjwvc3ZnPg==" alt="Word" style="width:18px;height:18px;">Word</span><span class="skill-bar-item__pct">85%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="85%" style="width:85%;"></div></div></div>
+        <div class="skill-bar-item"><div class="skill-bar-item__header"><span class="skill-bar-item__name"><img class="skill-logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0OCA0OCI+PHJlY3Qgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiByeD0iOCIgZmlsbD0iIzIxNzM0NiIvPjx0ZXh0IHg9IjUwJSIgeT0iNTYlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwgQmxhY2ssQXJpYWwiIGZvbnQtd2VpZ2h0PSI5MDAiIGZvbnQtc2l6ZT0iMjYiIGZpbGw9IndoaXRlIj5YPC90ZXh0Pjwvc3ZnPg==" alt="Excel" style="width:18px;height:18px;">Excel</span><span class="skill-bar-item__pct">80%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="80%" style="width:80%;"></div></div></div>
+        <div class="skill-bar-item"><div class="skill-bar-item__header"><span class="skill-bar-item__name"><img class="skill-logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0OCA0OCI+PHJlY3Qgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiByeD0iOCIgZmlsbD0iI0I3NDcyQSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTYlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwgQmxhY2ssQXJpYWwiIGZvbnQtd2VpZ2h0PSI5MDAiIGZvbnQtc2l6ZT0iMjYiIGZpbGw9IndoaXRlIj5QPC90ZXh0Pjwvc3ZnPg==" alt="PowerPoint" style="width:18px;height:18px;">PowerPoint</span><span class="skill-bar-item__pct">80%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="80%" style="width:80%;"></div></div></div>
+      </div>
+    </div>
+
+    <!-- Langues -->
+    <div class="skills-category reveal">
+      <div class="skills-category-header">
+        <i class="fas fa-language"></i>
+        <h3 class="skills-category-title" data-i18n="skills.languages">Langues</h3>
+        <div class="skills-category-line"></div>
+      </div>
+      <div class="languages-grid">
+        <div class="lang-item"><span class="lang-flag"></span><span class="lang-name">Wolof</span><span class="lang-level lang-level--native" data-i18n="lang.native">Langue maternelle</span></div>
+        <div class="lang-item"><span class="lang-flag"></span><span class="lang-name">Français</span><span class="lang-level lang-level--fluent" data-i18n="lang.fluent">Courant</span></div>
+        <div class="lang-item"><span class="lang-flag"></span><span class="lang-name">Anglais</span><span class="lang-level lang-level--intermediate" data-i18n="lang.intermediate">Intermédiaire</span></div>
+      </div>
+    </div>
+
+    <div class="skills-description reveal">
+      <p><i class="fas fa-code"></i> À la croisée du développement web et de la géomatique, je conçois des solutions modernes centrées sur la valorisation des données spatiales.</p>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ═══════════ PARCOURS ═══════════ -->
+<section id="parcours" class="section section--dark">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-header__number">03</span>
+      <h2 class="section-header__title" data-i18n="journey.title">Mon <em>Parcours</em></h2>
+      <div class="section-header__line"></div>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-dot"><i class="fas fa-graduation-cap"></i></div>
+        <div class="timeline-content">
+          <span class="timeline-date">2024 — En cours</span>
+          <h3 class="timeline-title" data-i18n="journey.l2.title">Licence en Géomatique <em>(L2)</em></h3>
+          <p class="timeline-org"><i class="fas fa-university"></i> Université Iba Der Thiam de Thiès (UIDT) — Thiès, Sénégal</p>
+          <p class="timeline-desc" data-i18n="journey.l2.desc">Formation pluridisciplinaire alliant cartographie, SIG, télédétection, analyse spatiale et développement de solutions numériques pour la gestion du territoire. Réalisation de projets de terrain avec KoboToolbox, production de cartes thématiques sous QGIS et ArcGIS, analyse de données sous R.</p>
+          <ul class="timeline-tags"><li>QGIS</li><li>ArcGIS</li><li>R</li><li>AutoCAD</li><li>KoboToolbox</li><li>Analyse spatiale</li></ul>
         </div>
       </div>
 
-      <div class="thankyou-overlay" id="thankyouOverlay" role="dialog" aria-hidden="true">
-        <div class="thankyou-box">
-          <div class="thankyou-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          </div>
-          <p class="thankyou-eyebrow">Message reçu</p>
-          <h2 class="thankyou-title">Merci de m'avoir<br><em>contacté !</em></h2>
-          <div class="thankyou-divider"></div>
-          <p class="thankyou-text">Je reviendrai vers vous sous 48h.</p>
-          <button class="btn--outline" id="thankyouClose">Retour</button>
+      <div class="timeline-item">
+        <div class="timeline-dot"><i class="fas fa-laptop-code"></i></div>
+        <div class="timeline-content">
+          <span class="timeline-date">2024 — En cours</span>
+          <h3 class="timeline-title" data-i18n="journey.dev.title">Auto-formation <em>Développement Web</em></h3>
+          <p class="timeline-org"><i class="fas fa-globe"></i> Autodidacte</p>
+          <p class="timeline-desc" data-i18n="journey.dev.desc">Apprentissage continu du développement web front-end : HTML, CSS, JavaScript. Création de projets personnels (portfolio, application de gestion) pour consolider les compétences. Pratique régulière de Python pour des scripts d'analyse de données.</p>
+          <ul class="timeline-tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Python</li><li>SQL</li></ul>
         </div>
       </div>
-    </section>
-  </main>
 
-  <footer class="footer">
-    <p>© 2026 <em>Serigne Mansour Gaye</em></p>
-    <p><span>Géomatique · Développement Web</span> · <span><i class="fas fa-map-marker-alt"></i> Diourbel, Sénégal</span></p>
-  </footer>
+      <div class="timeline-item">
+        <div class="timeline-dot"><i class="fas fa-school"></i></div>
+        <div class="timeline-content">
+          <span class="timeline-date">2023</span>
+          <h3 class="timeline-title" data-i18n="journey.bac.title">Baccalauréat <em>Série S</em></h3>
+          <p class="timeline-org"><i class="fas fa-map-marker-alt"></i> Sénégal</p>
+          <p class="timeline-desc" data-i18n="journey.bac.desc">Obtention du baccalauréat scientifique. Base solide en mathématiques, physique et sciences naturelles — socle qui nourrit aujourd'hui l'approche analytique en géomatique.</p>
+          <ul class="timeline-tags"><li>Mathématiques</li><li>Physique</li><li>SVT</li></ul>
+        </div>
+      </div>
 
-  <script src="JS/app.js"></script>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ PROJETS ═══════════ -->
+<section id="projets" class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-header__number">04</span>
+      <h2 class="section-header__title" data-i18n="projects.title">Mes <em>Projets</em></h2>
+      <div class="section-header__line"></div>
+    </div>
+    <div class="projects-filter reveal">
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all"><i class="fas fa-th"></i> <span data-i18n="filter.all">Tous</span></button>
+        <button class="filter-btn" data-filter="geomatique"><i class="fas fa-map"></i> <span data-i18n="filter.sig">Géomatique</span></button>
+        <button class="filter-btn" data-filter="web"><i class="fas fa-code"></i> <span data-i18n="filter.web">Web</span></button>
+        <button class="filter-btn" data-filter="architecture"><i class="fas fa-home"></i> <span data-i18n="filter.arch">Architecture</span></button>
+        <button class="filter-btn" data-filter="gestion"><i class="fas fa-laptop"></i> <span data-i18n="filter.mgmt">Gestion</span></button>
+      </div>
+    </div>
+    <div class="projects-grid" id="projectsContainer">
+
+      <article class="project-card reveal" data-year="2025" data-category="geomatique">
+        <div class="project-card__icon-wrap"><i class="fas fa-map"></i></div>
+        <div class="project-card__meta">
+          <span class="badge badge--geomatique"><i class="fas fa-map"></i> Géomatique</span>
+          <span class="project-card__year">2025</span>
+        </div>
+        <h3 class="project-card__name" data-i18n="proj1.title">Cartographie Thématique</h3>
+        <div class="project-card__context">
+          <p><strong data-i18n="proj.context">Contexte :</strong> <span data-i18n="proj1.context">Projet universitaire de L1 Géomatique — production de cartes thématiques à partir de données géospatiales réelles du Sénégal.</span></p>
+          <p><strong data-i18n="proj.tools">Outils :</strong> QGIS, ArcGIS</p>
+          <p><strong data-i18n="proj.result">Résultats :</strong> <span data-i18n="proj1.result">Cartes thématiques choroplèthes, cartes de densité de population et cartes d'occupation du sol produites et mise en page professionnelle.</span></p>
+        </div>
+        <ul class="project-card__tags"><li class="tag">QGIS</li><li class="tag">ArcGIS</li></ul>
+        <div class="project-card__actions">
+          <a href="Carte thematique.pdf" target="_blank" class="project-card__link"><i class="fas fa-eye"></i> <span data-i18n="proj.view">Voir le projet</span></a>
+          <a href="Carte thematique.pdf" download class="project-card__download"><i class="fas fa-download"></i></a>
+        </div>
+      </article>
+
+      <article class="project-card reveal" data-year="2025" data-category="architecture">
+        <div class="project-card__icon-wrap"><i class="fas fa-home"></i></div>
+        <div class="project-card__meta">
+          <span class="badge badge--architecture"><i class="fas fa-home"></i> Architecture</span>
+          <span class="project-card__year">2025</span>
+        </div>
+        <h3 class="project-card__name" data-i18n="proj2.title">Plan de Maison</h3>
+        <div class="project-card__context">
+          <p><strong data-i18n="proj.context">Contexte :</strong> <span data-i18n="proj2.context">Exercice de dessin technique appliqué à la conception d'un plan d'habitation complet avec AutoCAD.</span></p>
+          <p><strong data-i18n="proj.tools">Outils :</strong> AutoCAD</p>
+          <p><strong data-i18n="proj.result">Résultats :</strong> <span data-i18n="proj2.result">Plan architectural à l'échelle avec cotations, vues en coupe, façades et nomenclature complète.</span></p>
+        </div>
+        <ul class="project-card__tags"><li class="tag">AutoCAD</li><li class="tag">Dessin Technique</li><li class="tag">2D</li></ul>
+        <div class="project-card__actions">
+          <a href="Projet plan maison.pdf" target="_blank" class="project-card__link"><i class="fas fa-eye"></i> <span data-i18n="proj.view">Voir le projet</span></a>
+          <a href="Projet plan maison.pdf" download class="project-card__download"><i class="fas fa-download"></i></a>
+        </div>
+      </article>
+
+      <article class="project-card reveal" data-year="2026" data-category="geomatique">
+        <div class="project-card__icon-wrap"><i class="fas fa-chart-bar"></i></div>
+        <div class="project-card__meta">
+          <span class="badge badge--geomatique"><i class="fas fa-chart-bar"></i> Géomatique</span>
+          <span class="project-card__year">2026</span>
+        </div>
+        <h3 class="project-card__name" data-i18n="proj3.title">Analyse des Données</h3>
+        <div class="project-card__context">
+          <p><strong data-i18n="proj.context">Contexte :</strong> <span data-i18n="proj3.context">Traitement statistique et visualisation de données géospatiales pour identifier des tendances territoriales au Sénégal.</span></p>
+          <p><strong data-i18n="proj.tools">Outils :</strong> RStudio, R Markdown</p>
+          <p><strong data-i18n="proj.result">Résultats :</strong> <span data-i18n="proj3.result">Rapport R Markdown complet avec visualisations statistiques, cartes et conclusions analytiques sur les données étudiées.</span></p>
+        </div>
+        <ul class="project-card__tags"><li class="tag">RStudio</li><li class="tag">R Markdown</li><li class="tag">Stats</li></ul>
+        <div class="project-card__actions">
+          <a href="Projet Analyse 3.pdf" target="_blank" class="project-card__link"><i class="fas fa-eye"></i> <span data-i18n="proj.view">Voir le projet</span></a>
+          <a href="Projet Analyse 3.pdf" download class="project-card__download"><i class="fas fa-download"></i></a>
+        </div>
+      </article>
+
+      <article class="project-card reveal" data-year="2026" data-category="geomatique">
+        <div class="project-card__icon-wrap"><i class="fas fa-clipboard-list"></i></div>
+        <div class="project-card__meta">
+          <span class="badge badge--geomatique"><i class="fas fa-clipboard-list"></i> Géomatique</span>
+          <span class="project-card__year">2026</span>
+        </div>
+        <h3 class="project-card__name" data-i18n="proj4.title">Méthode de Collecte — Ndoncky</h3>
+        <div class="project-card__context">
+          <p><strong data-i18n="proj.context">Contexte :</strong> <span data-i18n="proj4.context">Mission de terrain à Ndoncky 2026 — conception d'un protocole de collecte de données géoréférencées avec KoboToolbox.</span></p>
+          <p><strong data-i18n="proj.tools">Outils :</strong> KoboToolbox, QGIS</p>
+          <p><strong data-i18n="proj.result">Résultats :</strong> <span data-i18n="proj4.result">Formulaire de collecte déployé sur le terrain, données exportées et visualisées dans QGIS avec cartographie des points collectés.</span></p>
+        </div>
+        <ul class="project-card__tags"><li class="tag">KoboToolbox</li><li class="tag">QGIS</li><li class="tag">Terrain</li></ul>
+        <div class="project-card__actions">
+          <a href="PROJET_Ndoncky 2026.pdf" target="_blank" class="project-card__link"><i class="fas fa-eye"></i> <span data-i18n="proj.view">Voir le projet</span></a>
+          <a href="PROJET_Ndoncky 2026.pdf" download class="project-card__download"><i class="fas fa-download"></i></a>
+        </div>
+      </article>
+
+      <article class="project-card reveal" data-year="2026" data-category="web">
+        <div class="project-card__icon-wrap"><i class="fas fa-code"></i></div>
+        <div class="project-card__meta">
+          <span class="badge badge--web"><i class="fas fa-code"></i> Web</span>
+          <span class="project-card__year">2026</span>
+        </div>
+        <h3 class="project-card__name" data-i18n="proj5.title">Portfolio Personnel</h3>
+        <div class="project-card__context">
+          <p><strong data-i18n="proj.context">Contexte :</strong> <span data-i18n="proj5.context">Conception et développement d'un portfolio web moderne en HTML/CSS/JS Vanilla — sans framework, entièrement custom.</span></p>
+          <p><strong data-i18n="proj.tools">Outils :</strong> HTML, CSS, JavaScript</p>
+          <p><strong data-i18n="proj.result">Résultats :</strong> <span data-i18n="proj5.result">Site responsive, multilingue FR/EN, mode sombre/clair, 13 animations CSS+JS, filtre projets, formulaire de contact.</span></p>
+        </div>
+        <ul class="project-card__tags"><li class="tag">HTML</li><li class="tag">CSS</li><li class="tag">JavaScript</li></ul>
+        <div class="project-card__actions">
+          <a href="https://github.com/Mansour-gaye-05/" target="_blank" class="project-card__link"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+      </article>
+
+      <article class="project-card reveal" data-year="2026" data-category="gestion">
+        <div class="project-card__icon-wrap"><i class="fas fa-laptop"></i></div>
+        <div class="project-card__meta">
+          <span class="badge badge--gestion"><i class="fas fa-laptop"></i> Gestion</span>
+          <span class="project-card__year">2026</span>
+        </div>
+        <h3 class="project-card__name" data-i18n="proj6.title">Gestion de Matériels</h3>
+        <div class="project-card__context">
+          <p><strong data-i18n="proj.context">Contexte :</strong> <span data-i18n="proj6.context">Application desktop de gestion d'équipements permettant de suivre, organiser et contrôler l'utilisation du matériel universitaire.</span></p>
+          <p><strong data-i18n="proj.tools">Outils :</strong> Python (PyCharm), MySQL</p>
+          <p><strong data-i18n="proj.result">Résultats :</strong> <span data-i18n="proj6.result">Application complète — CRUD complet, interface graphique, base de données MySQL.</span></p>
+        </div>
+        <ul class="project-card__tags"><li class="tag">Python</li><li class="tag">MySQL</li><li class="tag">POO</li></ul>
+        <div class="project-card__actions">
+          <a href="https://github.com/Mansour-gaye-05/" target="_blank" class="project-card__link"><i class="fab fa-github"></i> Voir sur GitHub</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- ═══════════ CONTACT ═══════════ -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-header__number">05</span>
+      <h2 class="section-header__title" data-i18n="contact.title">Con<em>tact</em></h2>
+      <div class="section-header__line"></div>
+    </div>
+    <div class="contact-layout">
+      <div class="contact-info reveal">
+        <h3 class="contact-info__heading" data-i18n="contact.heading">Travaillons <em>ensemble</em></h3>
+        <p class="contact-info__text" data-i18n="contact.text">Disponible pour un stage, une collaboration sur des projets SIG ou web géospatial, ou toute opportunité dans le domaine de la géomatique.</p>
+        <ul class="contact-socials">
+          <li><a href="https://www.linkedin.com/in/serigne-mansour-gaye-20a459375/" target="_blank" rel="noopener" class="social-link"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+          <li><a href="https://github.com/Mansour-gaye-05/" target="_blank" rel="noopener" class="social-link"><i class="fab fa-github"></i> GitHub</a></li>
+        </ul>
+      </div>
+      <form class="contact-form reveal" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+        <div class="form-field">
+          <input type="text" id="name" name="name" placeholder=" " required>
+          <label for="name" data-i18n="form.name">Nom</label>
+        </div>
+        <div class="form-field">
+          <input type="email" id="email" name="email" placeholder=" " required>
+          <label for="email" data-i18n="form.email">Email</label>
+        </div>
+        <div class="form-field">
+          <textarea id="message" name="message" placeholder=" " rows="5" required></textarea>
+          <label for="message" data-i18n="form.message">Message</label>
+        </div>
+        <button type="submit" class="btn--outline" data-i18n="form.send">Envoyer <i class="fas fa-paper-plane"></i></button>
+      </form>
+    </div>
+  </div>
+  <div class="thankyou-overlay" id="thankyouOverlay" role="dialog" aria-hidden="true">
+    <div class="thankyou-box">
+      <div class="thankyou-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+      <p class="thankyou-eyebrow" data-i18n="thanks.eyebrow">Message reçu</p>
+      <h2 class="thankyou-title" data-i18n="thanks.title">Merci de m'avoir<br><em>contacté !</em></h2>
+      <div class="thankyou-divider"></div>
+      <p class="thankyou-text" data-i18n="thanks.text">Je reviendrai vers vous sous 48h.</p>
+      <button class="btn--outline" id="thankyouClose" data-i18n="thanks.close">Retour</button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>© 2026 <em>Serigne Mansour Gaye</em></p>
+  <p><span>Géomatique · SIG · Développement Web</span> · <span><i class="fas fa-university"></i> UIDT, Thiès</span></p>
+</footer>
+
+<script src="JS/app.js"></script>
 </body>
 </html>
